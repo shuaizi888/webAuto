@@ -1,0 +1,11 @@
+name: config
+
+EMAIL:
+    Smtp_Server: smtp.pcitc.com
+    Smtp_Sender: t-shuai.gao@pcitc.com
+    Username: t-shuai.gao
+    Password: t-shuai.gao
+    Msg_Title: 费用报销系统自动化测试报告
+    Receivers: ['gaoshuai_888@163.com']  #收件人
+    From: 费用报销系统自动化测试
+    To: AutoTester
