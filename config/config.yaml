@@ -1,5 +1,6 @@
 name: config
 
+#配置邮件相关信息
 EMAIL:
     Smtp_Server: smtp.pcitc.com
     Smtp_Sender: t-shuai.gao@pcitc.com
@@ -9,3 +10,13 @@ EMAIL:
     Receivers: ['gaoshuai_888@163.com']  #收件人
     From: 费用报销系统自动化测试
     To: AutoTester
+
+#配置登陆相关信息
+LOGIN:
+     Login_url: http://10.246.109.17/fss
+     Login_uername: chenminghui.lube
+     Login_password: 1
+
+#创建其他费用报销单
+NEWQTBX:
+     New_url: http://10.246.109.17/fss/index.action

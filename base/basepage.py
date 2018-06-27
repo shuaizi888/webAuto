@@ -1,9 +1,10 @@
 #__author__ = 'shuai'
 # -*- coding: UTF-8 -*-
-from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import NoSuchElementException
-class Base(object):
+from selenium.webdriver.support.ui import WebDriverWait
+
+
+class BasePage(object):
 
     def __init__(self,base_url,driver,pagetitle):
         self.base_url = base_url
@@ -15,7 +16,6 @@ class Base(object):
 
     def _open(self,url,pagetitle):
         self.driver.get(url)
-        print 'hello'
         self.driver.maximize_window()
         assert self.on_page(pagetitle), u"打开开页面失败 %s" % url
 
@@ -29,10 +29,34 @@ class Base(object):
         except NoSuchElementException as ex:
             assert False, u'未能找到页面{0}元素'.format(ex)
 
+    def switch_frame(self, *loc):
+        """
+        切换frame
+        :param loc: 定位器
+        :return: 无
+        """
+        try:
+            element = self.driver.find_element(*loc)
+            self.driver.switch_to.default_content()
+            self.driver.switch_to.frame(element)
+
+        except NoSuchElementException as ex:
+            raise
+
+    def switch_parent_frame(self):
+        """
+        切换弹出窗体
+        :param loc:
+        :return:
+        """
+        try:
+            self.switch_parent_frame()
+        except NoSuchElementException as ex:
+            raise
 
     def find_elements(self,*loc):
         return self.driver.find_elements(*loc)
 
 
 if __name__ == '__main':
-    Base().open()
+    BasePage().open()

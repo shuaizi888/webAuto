@@ -2,9 +2,10 @@
 # -*- coding: UTF-8 -*-
 import logging
 import logging.config
-import time
-from basepage import gl
 import os
+
+from base import gl
+
 
 class LogDebug(object):
     #log配置

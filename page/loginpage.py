@@ -1,16 +1,16 @@
 #__author__ = 'shuai'
 # -*- coding: UTF-8 -*-
 from selenium.webdriver.common.by import By
+
 from base import basepage
-from selenium import webdriver
 
 
-class Loginpage(basepage.Base):
+class Loginpage(basepage.BasePage):
 
     login_username = (By.ID,'loginname')
     login_password = (By.ID,'password')
-    login_remenberUser = (By.ID,'login_remenberUser')
-    login_button = (By.ID,'button')
+    login_remenberUser = (By.ID, 'remenberUser')
+    login_button = (By.CLASS_NAME, 'button')
 
     #@property
     def open(self):
@@ -19,16 +19,15 @@ class Loginpage(basepage.Base):
 
 
     def inputUserName(self,username):
-        self.findElement(self.login_username).send_keys(username)
-
+        self.findElement(*(self.login_username)).send_keys(username)
 
     def inputPassword(self,password):
-        self.findElement(self.login_password).send_keys(password)
+        self.findElement(*(self.login_password)).send_keys(password)
 
     @property
     def cboxUser(self):
-        self.findElement(self.cboxUser).click()
+        self.findElement(*(self.login_remenberUser)).click()
 
     @property
     def btnClick(self):
-        self.findElement(self.login_button).click()
+        self.findElement(*(self.login_button)).click()

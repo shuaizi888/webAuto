@@ -1,6 +1,9 @@
 #__author__ = 'shuai'
 # -*- coding: UTF-8 -*-
-from script.result import EmailClass
-from base.log import LogDebug
-LogDebug()
-EmailClass().send
+from base.basepage import BasePage
+from page.newqtbx import NewQtbx
+
+# LogDebug()
+# result.EmailClass().send
+BasePage.switch_frame()
+NewQtbx.leftFrame()

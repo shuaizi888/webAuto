@@ -1,23 +1,36 @@
 #__author__ = 'shuai'
 # -*- coding: UTF-8 -*-
-from selenium import webdriver
+import os
 import unittest
-from selenium.webdriver.common.by import By
+from time import sleep
+
+from selenium import webdriver
+
+from base import gl
+from base import replacedata
 from page.loginpage import Loginpage
+
+
 class FYBX(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Ie()
         self.driver.maximize_window()
-        self.url = 'http://10.246.109.17/fss'
+        self.config = replacedata.getYamlfield(os.path.join(gl.configPath, 'config.yaml'))
+        self.url = self.config['LOGIN']['Login_url']
 
     def test_login(self):
+        self.config = replacedata.getYamlfield(os.path.join(gl.configPath, 'config.yaml'))
+        self.username = self.config['LOGIN']['Login_uername']
+        self.password = self.config['LOGIN']['Login_password']
         login = Loginpage(self.url,self.driver,u'财务共享自助服务门户')
         login.open()
-        login.inputUserName('chenminghui.lube')
-        login.inputPassword('1')
+        login.inputUserName(self.username)
+        login.inputPassword(self.password)
         login.cboxUser
         login.btnClick
+
+        sleep(5)
         # driver = self.driver
         # driver.get(self.url)
         # driver.find_element_by_id('loginname').send_keys('chenminghui.lube')

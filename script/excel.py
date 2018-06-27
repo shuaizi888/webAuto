@@ -1,11 +1,12 @@
 #__author__ = 'shuai'
 # -*- coding: UTF-8 -*-
-import xlrd as excel
-import json
 import gc #垃圾回收
+import json
 import os
-from base import gl
 
+import xlrd as excel
+
+from base import gl
 
 
 #Excel操作
@@ -33,7 +34,7 @@ class Excel(object):
         return table.row_values(rownum)
 
     #根据sheet名获取所有行数据，数组返回
-    def getExcelDataByName(self,start_col=4,sheet_name='Sheet1'):
+    def getExcelDataByName(self, start_col=4, sheet_name='login'):
         data = self.OpenExcel(self.excelPath)
         table = data.sheet_by_name(sheet_name)
         RowCount = table.nrows

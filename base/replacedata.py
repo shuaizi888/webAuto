@@ -1,8 +1,11 @@
 #__author__ = 'shuai'
 # -*- coding: UTF-8 -*-
-from log import LogDebug
 import time
-import yaml,json
+
+import json
+import yaml
+
+from base.log import LogDebug
 
 
 def replacePayload(old,field,val):
