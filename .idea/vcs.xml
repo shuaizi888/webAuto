@@ -4,6 +4,7 @@
     <mapping directory="D:/jiekou/API" vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="D:\web\fybx" vcs="Git" />
+    <mapping directory="D:\web\web" vcs="Git" />
     <mapping directory="D:\web\webtest" vcs="Git" />
   </component>
 </project>
