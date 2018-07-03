@@ -8,5 +8,8 @@
     <orderEntry type="module" module-name="JKP" />
     <orderEntry type="module" module-name="untitled" />
     <orderEntry type="module" module-name="webtest" />
+    <orderEntry type="module" module-name="am" />
+    <orderEntry type="module" module-name="AMTP" />
+    <orderEntry type="module" module-name="Demo" />
   </component>
 </module>

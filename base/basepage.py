@@ -50,12 +50,23 @@ class BasePage(object):
         :return:
         """
         try:
-            self.switch_parent_frame()
+            self.driver.switch_to.parent_frame()
         except NoSuchElementException as ex:
             raise
 
     def find_elements(self,*loc):
         return self.driver.find_elements(*loc)
+
+    def switch_frame2(self):
+        """
+        切换frame
+        :param loc: 定位器
+        :return: 无
+        """
+        self.driver.switch_to.default_content()
+
+    def switch_frame3(self, *loc):
+        return self.driver.switch_to_frame(*loc)
 
 
 if __name__ == '__main':

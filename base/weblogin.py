@@ -7,9 +7,9 @@
 #Version 1.0
 #实现自动创建其他费用销售订单
 '''
-from selenium import webdriver
 from time import sleep
-import sys
+
+from selenium import webdriver
 
 
 def login():
@@ -43,15 +43,15 @@ def login():
     browser.find_element_by_id('invoiceNum').send_keys('1')#附件张数
     browser.find_element_by_id('billNumber').send_keys('1')#附件页数
     browser.find_element_by_id('remark').send_keys(u'自动化测试')#申请事由
-    browser.find_element_by_id('businessType').click()# 业务种类
+    # browser.find_element_by_id('businessType').click()# 业务种类
     #处理业务种类
-    mframe = browser.find_element_by_xpath('.//*[@id="comboxDiv0"]/iframe')
-    browser.switch_to.frame(mframe)
-    browser.find_element_by_id('txtName').send_keys('002')#业务种类选择
-    browser.find_element_by_id('btQuery').click()#搜索
-    sleep(3)
-    browser.find_element_by_xpath('//table[@id="cbTable"]/tbody/tr[2]/td[2]').click()#选择业务种类
-    sleep(3)
+    # mframe = browser.find_element_by_xpath('.//*[@id="comboxDiv0"]/iframe')
+    # browser.switch_to.frame(mframe)
+    # browser.find_element_by_id('txtName').send_keys('002')#业务种类选择
+    # browser.find_element_by_id('btQuery').click()#搜索
+    # sleep(3)
+    # browser.find_element_by_xpath('//table[@id="cbTable"]/tbody/tr[2]/td[2]').click()#选择业务种类
+    # sleep(3)
     #发票总金额
     browser.switch_to.default_content()
     mframe = browser.find_element_by_name('mainFrame')
@@ -60,7 +60,7 @@ def login():
     browser.find_element_by_id('expBCurAmount_1').send_keys('100')
     #点击费用项目
     browser.find_element_by_id('expTree_1').click()
-    mframe = browser.find_element_by_xpath('.//*[@id="comboxDiv1"]/iframe')
+    mframe = browser.find_element_by_xpath('.//*[@id="comboxDiv0"]/iframe')
     browser.switch_to.frame(mframe)
     #常用勾选框
     checkbox = browser.find_element_by_id('moreExp')

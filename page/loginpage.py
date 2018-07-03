@@ -6,7 +6,9 @@ from base import basepage
 
 
 class Loginpage(basepage.BasePage):
-
+    """
+    登陆功能
+    """
     login_username = (By.ID,'loginname')
     login_password = (By.ID,'password')
     login_remenberUser = (By.ID, 'remenberUser')
