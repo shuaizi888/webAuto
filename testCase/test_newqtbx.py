@@ -2,6 +2,7 @@
 # -*- coding: UTF-8 -*-
 import os
 import unittest
+from time import sleep
 
 from selenium import webdriver
 
@@ -9,6 +10,7 @@ from base import gl
 from base import replacedata
 from page.loginpage import Loginpage
 from page.newqtbx import NewQtbx
+from script.image import insert_img
 
 
 class FYNewQtbx(unittest.TestCase):
@@ -67,7 +69,10 @@ class FYNewQtbx(unittest.TestCase):
         qtbx.frame()
         qtbx.switch_frame3(self.mf)
         qtbx.outputhqdh
+        insert_img(self.driver, "1", "2")
+        sleep(3)
         qtbx.tjbutton
+        sleep(3)
         qtbx.switch_parent_frame()
         qtbx.QDbutton
 

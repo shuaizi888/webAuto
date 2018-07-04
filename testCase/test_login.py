@@ -9,7 +9,7 @@ from selenium import webdriver
 from base import gl
 from base import replacedata
 from page.loginpage import Loginpage
-from script.image import getImage
+from script.image import insert_img
 
 
 class FYBX(unittest.TestCase):
@@ -30,9 +30,9 @@ class FYBX(unittest.TestCase):
         login.inputPassword(self.password)
         login.cboxUser
         login.btnClick
-
         sleep(5)
-        getImage()
+        # getImage()
+        insert_img(login.driver, "1", "2")
         # driver = self.driver
         # driver.get(self.url)
         # driver.find_element_by_id('loginname').send_keys('chenminghui.lube')
