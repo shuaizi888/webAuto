@@ -1,18 +1,26 @@
 #__author__ = 'shuai'
 # -*- coding: UTF-8 -*-
 
+import os
 import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
-from email.mime.base import MIMEBase
-from email.header import Header
-from email import encoders
 import time
-from base import replacedata
+from email import encoders
+from email.header import Header
+from email.mime.base import MIMEBase
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
 from base import gl
-import yaml,os,base64
+from base import replacedata
 
-
+testReport = 'D:\\web\\report'
+lists = os.listdir(testReport)  # 返回测试报告所在目录下的所有文件列表
+lists2 = sorted(lists)  # 获得按升序排序后的测试报告列表
+file_new = os.path.join(testReport, lists2[-1])  # 获取最后一个即最新的测试报告地址
+print file_new
+list = file_new.split('\\')
+name = list[3]
+print name
 class EmailClass(object):
     def __init__(self):
         self.curDateTime = str(time.strftime('%Y-%m-%d %H:%M:%S',time.localtime())) #当前日期时间

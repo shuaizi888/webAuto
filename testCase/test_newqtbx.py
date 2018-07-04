@@ -34,10 +34,12 @@ class FYNewQtbx(unittest.TestCase):
         qtbx.leftFrame()
         qtbx.bxsq_button
         qtbx.xjbx_button
+        self.mf = self.config['NEWQTBX']['MainFrame']
         qtbx.frame()
-        qtbx.switch_frame3('mainFrame')
+        qtbx.switch_frame3(self.mf)
         qtbx.qtbx_button
-        qtbx.inputdata('1', '1', u'自动化测试', '100')
+        # self.data = self.config['NEWQTBX']['Inputdata']
+        qtbx.inputdata(1, 1, u'自动化测试', 100)
         # qtbx.ywzl_button
         # qtbx.frame()
         # qtbx.switch_frame3('.//*[@id="comboxDiv0"]/iframe')
@@ -51,16 +53,19 @@ class FYNewQtbx(unittest.TestCase):
         qtbx.fyxm_button
         qtbx.xmframe()
         qtbx.cybox_select
-        qtbx.inputxmfy(u'项目培训费')
+        self.xmfydata = self.config['NEWQTBX']['InputXMFY']
+        qtbx.inputxmfy(self.xmfydata)
         qtbx.new_ssuo
         qtbx.fyxm_gl
+        self.mf = self.config['NEWQTBX']['MainFrame']
         qtbx.frame()
-        qtbx.switch_frame3('mainFrame')
+        qtbx.switch_frame3(self.mf)
         qtbx.save
         qtbx.switch_parent_frame()
         qtbx.QDbutton
+        self.mf = self.config['NEWQTBX']['MainFrame']
         qtbx.frame()
-        qtbx.switch_frame3('mainFrame')
+        qtbx.switch_frame3(self.mf)
         qtbx.outputhqdh
         qtbx.tjbutton
         qtbx.switch_parent_frame()

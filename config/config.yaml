@@ -20,3 +20,6 @@ LOGIN:
 #创建其他费用报销单
 NEWQTBX:
      New_url: http://10.246.109.17/fss/index.action
+     MainFrame : mainFrame
+     Inputdata : 1, 1, 自动化测试,100
+     InputXMFY : 项目培训费

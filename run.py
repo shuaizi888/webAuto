@@ -16,7 +16,7 @@ if __name__=="__main__":
     suite.addTest(FYBX('test_login'))
     suite.addTest(FYNewQtbx('test_newqtbx'))
     # 后续增加测试集
-    filename = 'D:\\web\\report\\' + 'test_login' + time.strftime("%Y_%m_%d_%H_%M_%S") + '.html'  # 拼接出测试报告名
+    filename = 'D:\\web\\report\\' + 'test' + time.strftime("%Y_%m_%d_%H_%M_%S") + '.html'  # 拼接出测试报告名
     with file(filename, 'wb') as fp:
         runner = HTMLTestRunner(stream=fp,
                                 title='费用报销系统自动化测试报告',
